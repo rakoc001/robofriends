@@ -11,12 +11,11 @@ function App() {
     const callAPI = () => {
         return fetch('https://jsonplaceholder.typicode.com/users')
         .then(response => response.json())
-        .then(users => setRobots({users})
-    );}
+        .then(users => {setRobots(users)});}
 
     useEffect( () => {
         callAPI();
-    });
+    }, []);
 
     const onSearchChange = (event) => {
         setSearchfield(event.target.value) 
