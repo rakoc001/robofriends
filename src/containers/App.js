@@ -15,14 +15,13 @@ function App() {
     );}
 
     useEffect( () => {
-        callAPI()
-        .then(() => console.log(robots));
+        callAPI();
     });
 
     const onSearchChange = (event) => {
         setSearchfield(event.target.value) 
     };
-    
+
     const filteredRobots = robots.filter(robot => {
         return robot.name.toLowerCase().includes(searchfield.toLowerCase());
     })
